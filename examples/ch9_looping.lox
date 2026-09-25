@@ -1,0 +1,31 @@
+// Chapter 9, challenge 2: a loop with no "while", "for", or "if".
+// The condition returns a True or False object from challenge 1, and
+// the loop repeats by calling itself in tail position. Needs functions
+// and classes (Chapters 10-12), so run it with the book's complete jlox.
+class True {
+  ifThenElse(thenBranch, elseBranch) { return thenBranch(); }
+}
+class False {
+  ifThenElse(thenBranch, elseBranch) { return elseBranch(); }
+}
+
+fun whileLoop(condition, body) {
+  fun next() {
+    body();
+    return whileLoop(condition, body);   // tail call
+  }
+  fun stop() { return nil; }
+  return condition().ifThenElse(next, stop);
+}
+
+var i = 0;
+var t = True();
+var f = False();
+fun check() {
+  // "i < 5" gives a Lox boolean; turn it into a True/False object.
+  // (A language built this way would have "<" return these objects.)
+  return (i < 5 and t) or f;
+}
+fun step() { print i; i = i + 1; }
+
+whileLoop(check, step);   // prints 0 1 2 3 4

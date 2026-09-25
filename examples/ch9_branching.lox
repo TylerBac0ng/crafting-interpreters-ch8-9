@@ -1,0 +1,18 @@
+// Chapter 9, challenge 1: conditional execution with no "if" statement.
+// Needs functions and classes (Chapters 10-12), so run it with the
+// book's complete jlox, not the Chapter 9 interpreter in src/.
+class True {
+  ifThenElse(thenBranch, elseBranch) { return thenBranch(); }
+}
+class False {
+  ifThenElse(thenBranch, elseBranch) { return elseBranch(); }
+}
+
+var yes = True();
+var no = False();
+
+fun sayYes() { print "yes"; }
+fun sayNo()  { print "no"; }
+
+yes.ifThenElse(sayYes, sayNo);   // prints "yes"
+no.ifThenElse(sayYes, sayNo);    // prints "no"
