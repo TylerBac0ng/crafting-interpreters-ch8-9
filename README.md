@@ -25,8 +25,13 @@ java -cp build com.craftinginterpreters.lox.Lox file.lox   # run a script
 
 ## Chapter 9 — Control Flow
 
-1. **Branching without `if`.** Written answer (see `answers.pdf`).
-2. **Looping without `while`/`for`.** Written answer (see `answers.pdf`).
+1. **Branching without `if`.** Written answer (see `answers.pdf`), with a
+   working example in `examples/ch9_branching.lox`.
+2. **Looping without `while`/`for`.** Written answer (see `answers.pdf`),
+   with a working example in `examples/ch9_looping.lox`.
+
+   Both examples use functions and classes (Chapters 10–12), so run them
+   with the book's finished jlox, not the Chapter 9 interpreter here.
 3. **`break` statement.** Adds the `BREAK` token, the `Stmt.Break` node,
    and parsing that tracks loop depth, so `break` outside a loop is a
    syntax error. At run time, `break` throws a `BreakException` that the
