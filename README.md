@@ -20,14 +20,14 @@ java -cp build com.craftinginterpreters.lox.Lox file.lox   # run a script
    runtime error. A variable that was explicitly set to `nil` still works.
    The interpreter stores a private `uninitialized` sentinel for
    `var a;` and checks for it in `visitVariableExpr()`.
-3. **`var a = a + 2;` in a nested block.** Written answer only (see
-   `answers.pdf`). `tests/ch8_shadow.lox` shows how jlox behaves.
+3. **`var a = a + 2;` in a nested block.** Written answer only (submitted
+   separately). `tests/ch8_shadow.lox` shows how jlox behaves.
 
 ## Chapter 9 — Control Flow
 
-1. **Branching without `if`.** Written answer (see `answers.pdf`), with a
+1. **Branching without `if`.** Written answer (submitted separately), with a
    working example in `examples/ch9_branching.lox`.
-2. **Looping without `while`/`for`.** Written answer (see `answers.pdf`),
+2. **Looping without `while`/`for`.** Written answer (submitted separately),
    with a working example in `examples/ch9_looping.lox`.
 
    Both examples use functions and classes (Chapters 10–12), so run them
